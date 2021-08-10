@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>623</width>
-    <height>375</height>
+    <height>415</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,46 +51,141 @@
        <height>209</height>
       </rect>
      </property>
-     <widget class="QScrollBar" name="verticalScrollBar">
-      <property name="geometry">
-       <rect>
-        <x>580</x>
-        <y>0</y>
-        <width>20</width>
-        <height>211</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
      <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>-10</x>
+        <x>0</x>
         <y>0</y>
-        <width>611</width>
+        <width>601</width>
         <height>211</height>
        </rect>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::SolidLine</enum>
+      </property>
+      <property name="rowCount">
+       <number>1</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>39</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>183</number>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>35</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>45</number>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <row/>
       <column>
        <property name="text">
         <string>Name</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
        </property>
       </column>
       <column>
        <property name="text">
         <string>Description</string>
        </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>Value</string>
        </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>Celular</string>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>eletronic</string>
+       </property>
+      </item>
+      <item row="0" column="2">
+       <property name="text">
+        <string>1000</string>
+       </property>
+      </item>
      </widget>
-     <zorder>tableWidget</zorder>
-     <zorder>verticalScrollBar</zorder>
     </widget>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -110,6 +205,38 @@ color: rgb(70, 48, 171);
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Valor total:   $</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>360</y>
+      <width>531</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>0</string>
     </property>
    </widget>
   </widget>

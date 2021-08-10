@@ -130,7 +130,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "Valor total:   $"))
         self.label_4.setText(_translate("MainWindow", "0"))
-from imgs import img
+import img_rc
 
 
 if __name__ == "__main__":
