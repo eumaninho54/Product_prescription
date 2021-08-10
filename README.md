@@ -1,5 +1,5 @@
 # Product_prescription
- Graphical User Interface with PyQ
+ Graphical User Interface with PyQT5
  
 ##Image
 
