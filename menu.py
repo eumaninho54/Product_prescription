@@ -10,14 +10,21 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_Dialog(object):
+
+    def clean_program(self):
+        self.Name.setText(None)
+        self.description.setText(None)
+        self.Value.setText(None)
+
+        
  
     # Chech Infs
     def chechField(self):
         text_name = ""
         text_desc = ""
         text_value = ""
+
 
         def lermensagem(msg):
                 self.error.show()
@@ -274,6 +281,8 @@ class Ui_Dialog(object):
 
         self.addbutton.clicked.connect(self.chechField)
 
+        self.cleanbutton.clicked.connect(self.clean_program)
+
 
 
         self.retranslateUi(Dialog)
@@ -282,6 +291,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "@ymaninho54"))
+        Dialog.setWindowIcon(QtGui.QIcon('logowindow.png'))
         self.Name.setPlaceholderText(_translate("Dialog", "Name "))
         self.description.setPlaceholderText(_translate("Dialog", "Description "))
         self.Value.setPlaceholderText(_translate("Dialog", "Value "))
