@@ -37,12 +37,15 @@ class Ui_Dialog(object):
             text_value = ''
         
         if text_name + text_desc + text_value != '':
-            text = text_name + text_desc + text_value
+            text = 'Empty Space'
             lermensagem(text)
+            self.label_2.setGeometry(QtCore.QRect(185, 0, 350, 21))
         else:
             text = 'Successful registration'
+            self.label_2.setGeometry(QtCore.QRect(155, 0, 350, 21))
             if self.checkBox.isChecked():
                 text = text + '| Waiting for additional information'
+                self.label_2.setGeometry(QtCore.QRect(90, 0, 350, 21))
         lermensagem(text)
 
 
@@ -232,7 +235,7 @@ class Ui_Dialog(object):
         self.error.setFrameShadow(QtWidgets.QFrame.Raised)
         self.error.setObjectName("error")
         self.label_2 = QtWidgets.QLabel(self.error)
-        self.label_2.setGeometry(QtCore.QRect(190, 0, 51, 21))
+        self.label_2.setGeometry(QtCore.QRect(195, 0, 350, 21))
         self.label_2.setObjectName("label_2")
         self.xcancel = QtWidgets.QPushButton(self.error)
         self.xcancel.setGeometry(QtCore.QRect(400, 0, 31, 21))
