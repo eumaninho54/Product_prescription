@@ -12,144 +12,280 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Dialog(object):
+ 
+    # Chech Infs
+    def chechField(self):
+        text_name = ""
+        text_desc = ""
+        text_value = ""
+
+        def lermensagem(msg):
+                self.error.show()
+                self.label_2.setText(msg)
+
+        if not self.Name.text():
+            text_name = 'Name Empty'
+        else:
+            text_name = ''
+        if not self.description.text():
+            text_desc = 'Description Empty'
+        else:
+            text_desc = ''
+        if not self.Value.text():
+            text_value = 'Value Empty'
+        else:
+            text_value = ''
+        
+        if text_name + text_desc + text_value != '':
+            text = text_name + text_desc + text_value
+            lermensagem(text)
+        else:
+            text = 'Successful registration'
+            if self.checkBox.isChecked():
+                text = text + '| Waiting for additional information'
+        lermensagem(text)
+
+
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(561, 432)
+        Dialog.resize(642, 459)
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(100, 30, 351, 51))
-        self.label.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.label.setTabletTracking(False)
-        self.label.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.label.setAcceptDrops(False)
-        self.label.setAutoFillBackground(False)
-        self.label.setStyleSheet("font: 8pt \"MS Gothic\";\n"
-"")
-        self.label.setInputMethodHints(QtCore.Qt.ImhNone)
-        self.label.setScaledContents(False)
-        self.label.setWordWrap(False)
-        self.label.setOpenExternalLinks(False)
+        self.label.setGeometry(QtCore.QRect(-50, -40, 791, 561))
+        self.label.setStyleSheet("background-color: rgb(0, 0, 0);")
+        self.label.setText("")
         self.label.setObjectName("label")
-        self.label_3 = QtWidgets.QLabel(Dialog)
-        self.label_3.setGeometry(QtCore.QRect(140, 210, 101, 16))
-        self.label_3.setTabletTracking(False)
-        self.label_3.setAcceptDrops(False)
-        self.label_3.setAutoFillBackground(False)
-        self.label_3.setStyleSheet("font: 57 8pt \"Tw Cen MT Std\";")
-        self.label_3.setObjectName("label_3")
-        self.label_5 = QtWidgets.QLabel(Dialog)
-        self.label_5.setGeometry(QtCore.QRect(130, 250, 41, 31))
-        self.label_5.setAutoFillBackground(False)
-        self.label_5.setStyleSheet("image: url(:/img/pngwing.com.png);\n"
-"")
-        self.label_5.setText("")
-        self.label_5.setObjectName("label_5")
-        self.label_4 = QtWidgets.QLabel(Dialog)
-        self.label_4.setGeometry(QtCore.QRect(170, 260, 71, 16))
-        self.label_4.setTabletTracking(False)
-        self.label_4.setAcceptDrops(False)
-        self.label_4.setAutoFillBackground(False)
-        self.label_4.setStyleSheet("font: 57 8pt \"Tw Cen MT Std\";")
-        self.label_4.setObjectName("label_4")
-        self.label_6 = QtWidgets.QLabel(Dialog)
-        self.label_6.setGeometry(QtCore.QRect(170, 160, 61, 16))
-        self.label_6.setTabletTracking(False)
-        self.label_6.setAcceptDrops(False)
-        self.label_6.setAutoFillBackground(False)
-        self.label_6.setStyleSheet("font: 57 8pt \"Tw Cen MT Std\";")
-        self.label_6.setObjectName("label_6")
-        self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(90, 200, 61, 31))
-        self.label_2.setStyleSheet("image: url(:/img/tooltip_text_icon_138091.png);")
-        self.label_2.setText("")
+        self.Name = QtWidgets.QLineEdit(Dialog)
+        self.Name.setGeometry(QtCore.QRect(250, 190, 251, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0, 128))
+        brush.setStyle(QtCore.Qt.NoBrush)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.PlaceholderText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0, 128))
+        brush.setStyle(QtCore.Qt.NoBrush)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.PlaceholderText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(222, 222, 222))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0, 128))
+        brush.setStyle(QtCore.Qt.NoBrush)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
+        self.Name.setPalette(palette)
+        font = QtGui.QFont()
+        font.setFamily("Muli Light")
+        font.setPointSize(10)
+        self.Name.setFont(font)
+        self.Name.setTabletTracking(False)
+        self.Name.setStyleSheet("QLineEdit {    \n"
+"    border-color: rgb(85, 0, 255);\n"
+"    background-color: rgb(222, 222, 222);\n"
+"    color: rgb(0, 0, 0);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border:2px solid rgb(75, 0, 245);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border:2px solid rgb(45, 0, 205);\n"
+"\n"
+"}")
+        self.Name.setText("")
+        self.Name.setObjectName("Name")
+        self.description = QtWidgets.QLineEdit(Dialog)
+        self.description.setGeometry(QtCore.QRect(250, 250, 251, 31))
+        font = QtGui.QFont()
+        font.setFamily("Muli Light")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        font.setKerning(True)
+        self.description.setFont(font)
+        self.description.setTabletTracking(False)
+        self.description.setAcceptDrops(True)
+        self.description.setStyleSheet("QLineEdit {    \n"
+"    border-color: rgb(85, 0, 255);\n"
+"    background-color: rgb(222, 222, 222);\n"
+"    color: rgb(0, 0, 0);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border:2px solid rgb(75, 0, 245);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border:2px solid rgb(45, 0, 205);\n"
+"\n"
+"}")
+        self.description.setText("")
+        self.description.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
+        self.description.setClearButtonEnabled(False)
+        self.description.setObjectName("description")
+        self.Value = QtWidgets.QLineEdit(Dialog)
+        self.Value.setGeometry(QtCore.QRect(250, 310, 251, 31))
+        font = QtGui.QFont()
+        font.setFamily("Muli Light")
+        font.setPointSize(10)
+        self.Value.setFont(font)
+        self.Value.setStyleSheet("QLineEdit {    \n"
+"    border-color: rgb(85, 0, 255);\n"
+"    background-color: rgb(222, 222, 222);\n"
+"    color: rgb(0, 0, 0);\n"
+"}\n"
+"QLineEdit:hover {\n"
+"    border:2px solid rgb(75, 0, 245);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border:2px solid rgb(45, 0, 205);\n"
+"\n"
+"}")
+        self.Value.setObjectName("Value")
+        self.descimage = QtWidgets.QLabel(Dialog)
+        self.descimage.setGeometry(QtCore.QRect(170, 240, 81, 41))
+        self.descimage.setStyleSheet("image: url(:/img/nome_00000/desc_1_00000.png);")
+        self.descimage.setText("")
+        self.descimage.setObjectName("descimage")
+        self.nomeimg = QtWidgets.QLabel(Dialog)
+        self.nomeimg.setGeometry(QtCore.QRect(170, 180, 81, 41))
+        self.nomeimg.setStyleSheet("image: url(:/img/nome_1_00000.png);")
+        self.nomeimg.setText("")
+        self.nomeimg.setObjectName("nomeimg")
+        self.valorimage = QtWidgets.QLabel(Dialog)
+        self.valorimage.setGeometry(QtCore.QRect(170, 310, 81, 41))
+        self.valorimage.setStyleSheet("image: url(:/img/nome_1_00001_00000.png);")
+        self.valorimage.setText("")
+        self.valorimage.setObjectName("valorimage")
+        self.logotexto = QtWidgets.QLabel(Dialog)
+        self.logotexto.setGeometry(QtCore.QRect(0, 10, 641, 141))
+        self.logotexto.setStyleSheet("image: url(:/img/Capturar_00000.png);")
+        self.logotexto.setText("")
+        self.logotexto.setObjectName("logotexto")
+        self.addbutton = QtWidgets.QPushButton(Dialog)
+        self.addbutton.setGeometry(QtCore.QRect(250, 380, 75, 23))
+        self.addbutton.setStyleSheet("color: rgb(255, 255, 255);\n"
+"gridline-color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);")
+        self.addbutton.setObjectName("addbutton")
+        self.cleanbutton = QtWidgets.QPushButton(Dialog)
+        self.cleanbutton.setGeometry(QtCore.QRect(370, 380, 75, 23))
+        self.cleanbutton.setStyleSheet("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);")
+        self.cleanbutton.setObjectName("cleanbutton")
+        self.checkBox = QtWidgets.QCheckBox(Dialog)
+        self.checkBox.setGeometry(QtCore.QRect(500, 380, 81, 20))
+        self.checkBox.setStyleSheet("color: rgb(255, 255, 255);")
+        self.checkBox.setObjectName("checkBox")
+        self.error = QtWidgets.QFrame(Dialog)
+        self.error.setGeometry(QtCore.QRect(110, 10, 431, 20))
+        self.error.setStyleSheet("background-color: rgb(255, 85, 127);\n"
+"border-radius: 5px")
+        self.error.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.error.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.error.setObjectName("error")
+        self.label_2 = QtWidgets.QLabel(self.error)
+        self.label_2.setGeometry(QtCore.QRect(190, 0, 51, 21))
         self.label_2.setObjectName("label_2")
-        self.label_7 = QtWidgets.QLabel(Dialog)
-        self.label_7.setGeometry(QtCore.QRect(130, 150, 41, 31))
-        self.label_7.setStyleSheet("image: url(:/img/—Pngtree—checkout cart add product to_5100995.png);")
-        self.label_7.setText("")
-        self.label_7.setObjectName("label_7")
-        self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(220, 320, 75, 23))
-        self.pushButton.setObjectName("pushButton")
-        self.radioButton = QtWidgets.QRadioButton(Dialog)
-        self.radioButton.setGeometry(QtCore.QRect(420, 340, 82, 17))
-        self.radioButton.setObjectName("radioButton")
-        self.radioButton_2 = QtWidgets.QRadioButton(Dialog)
-        self.radioButton_2.setGeometry(QtCore.QRect(420, 320, 82, 17))
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.radioButton_3 = QtWidgets.QRadioButton(Dialog)
-        self.radioButton_3.setGeometry(QtCore.QRect(420, 300, 82, 17))
-        self.radioButton_3.setObjectName("radioButton_3")
-        self.line = QtWidgets.QFrame(Dialog)
-        self.line.setGeometry(QtCore.QRect(0, -10, 20, 401))
-        self.line.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
-        self.line_2 = QtWidgets.QFrame(Dialog)
-        self.line_2.setGeometry(QtCore.QRect(540, 40, 20, 401))
-        self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_2.setObjectName("line_2")
-        self.line_4 = QtWidgets.QFrame(Dialog)
-        self.line_4.setGeometry(QtCore.QRect(0, 410, 391, 20))
-        self.line_4.setInputMethodHints(QtCore.Qt.ImhUppercaseOnly)
-        self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_4.setObjectName("line_4")
-        self.lineEdit = QtWidgets.QLineEdit(Dialog)
-        self.lineEdit.setGeometry(QtCore.QRect(250, 150, 251, 31))
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(Dialog)
-        self.lineEdit_2.setGeometry(QtCore.QRect(250, 200, 251, 31))
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit_3 = QtWidgets.QLineEdit(Dialog)
-        self.lineEdit_3.setGeometry(QtCore.QRect(250, 250, 251, 31))
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.pushButton_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_2.setGeometry(QtCore.QRect(310, 320, 75, 23))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.label_9 = QtWidgets.QLabel(Dialog)
-        self.label_9.setGeometry(QtCore.QRect(-40, -28, 621, 151))
-        self.label_9.setStyleSheet("background-color: rgb(0, 170, 255);")
-        self.label_9.setText("")
-        self.label_9.setObjectName("label_9")
-        self.line_2.raise_()
-        self.line.raise_()
-        self.label_9.raise_()
+        self.xcancel = QtWidgets.QPushButton(self.error)
+        self.xcancel.setGeometry(QtCore.QRect(400, 0, 31, 21))
+        self.xcancel.setStyleSheet("QPushButton {\n"
+"    image: url(:/img/3052270_letter_lowercase_red_x_icon.png);\n"
+"    botder-radius: 5px;\n"
+"    \n"
+"    background-color: rgb(255, 139, 189);\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(35, 35, 35);\n"
+"    color: rgb(200, 200, 200);\n"
+"}")
+        self.xcancel.setText("")
+        self.xcancel.setObjectName("xcancel")
         self.label.raise_()
-        self.label_3.raise_()
-        self.label_5.raise_()
-        self.label_4.raise_()
-        self.label_6.raise_()
-        self.label_2.raise_()
-        self.label_7.raise_()
-        self.pushButton.raise_()
-        self.radioButton.raise_()
-        self.radioButton_2.raise_()
-        self.radioButton_3.raise_()
-        self.line_4.raise_()
-        self.lineEdit.raise_()
-        self.lineEdit_2.raise_()
-        self.lineEdit_3.raise_()
-        self.pushButton_2.raise_()
+        self.Name.raise_()
+        self.description.raise_()
+        self.Value.raise_()
+        self.descimage.raise_()
+        self.nomeimg.raise_()
+        self.valorimage.raise_()
+        self.addbutton.raise_()
+        self.cleanbutton.raise_()
+        self.checkBox.raise_()
+        self.logotexto.raise_()
+        self.error.raise_()
+
+        # Functions
+        
+
+        # closed error image
+        self.xcancel.clicked.connect(lambda: self.error.hide())
+
+        self.error.hide()
+
+        self.addbutton.clicked.connect(self.chechField)
+
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600;\">PRESCRIÇÃO DE PRODUTOS</span></p></body></html>"))
-        self.label_3.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#2d2d2d;\">DESCRIÇÃO &gt;</span></p></body></html>"))
-        self.label_4.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#2d2d2d;\">VALOR &gt;</span></p></body></html>"))
-        self.label_6.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#2d2d2d;\">NOME &gt;</span></p></body></html>"))
-        self.pushButton.setText(_translate("Dialog", "Adicionar"))
-        self.radioButton.setText(_translate("Dialog", "Outro"))
-        self.radioButton_2.setText(_translate("Dialog", "Eletrônico"))
-        self.radioButton_3.setText(_translate("Dialog", "Alimento"))
-        self.lineEdit.setPlaceholderText(_translate("Dialog", "Nome do produto:"))
-        self.lineEdit_2.setPlaceholderText(_translate("Dialog", "Descrição do produto: "))
-        self.lineEdit_3.setPlaceholderText(_translate("Dialog", "Valor do produto:"))
-        self.pushButton_2.setText(_translate("Dialog", "Limpar"))
+        Dialog.setWindowTitle(_translate("Dialog", "@ymaninho54"))
+        self.Name.setPlaceholderText(_translate("Dialog", "Name "))
+        self.description.setPlaceholderText(_translate("Dialog", "Description "))
+        self.Value.setPlaceholderText(_translate("Dialog", "Value "))
+        self.addbutton.setText(_translate("Dialog", "Add"))
+        self.cleanbutton.setText(_translate("Dialog", "Clean"))
+        self.checkBox.setText(_translate("Dialog", "keep adding"))
+        self.label_2.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt;\">Error</span></p></body></html>"))
 import img
 
 
