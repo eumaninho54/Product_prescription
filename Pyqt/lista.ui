@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>623</width>
-    <height>415</height>
+    <height>413</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,11 +75,15 @@
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">
+</string>
+      </property>
       <property name="gridStyle">
        <enum>Qt::SolidLine</enum>
       </property>
       <property name="rowCount">
-       <number>1</number>
+       <number>10</number>
       </property>
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -123,6 +127,15 @@
       <attribute name="verticalHeaderStretchLastSection">
        <bool>false</bool>
       </attribute>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
       <row/>
       <column>
        <property name="text">
@@ -237,6 +250,37 @@ color: rgb(70, 48, 171);
     </property>
     <property name="text">
      <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>350</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+background-color: rgb(83, 83, 83);</string>
+    </property>
+    <property name="text">
+     <string>Add again</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>350</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clean</string>
     </property>
    </widget>
   </widget>

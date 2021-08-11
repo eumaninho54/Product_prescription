@@ -2,6 +2,7 @@ import menu
 import lista
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 menu.Ui_Dialog
 lista.Ui_MainWindow
 
@@ -15,7 +16,9 @@ def menuinic():
         Dialog.show()
         app.exec_()
 
+
 def listainic():
+
     if __name__ == "__main__":
         import sys
         app = QtWidgets.QApplication(sys.argv)
@@ -25,5 +28,9 @@ def listainic():
         MainWindow.show()
         app.exec_()
 
+
+
+
 menuinic()
 listainic()
+

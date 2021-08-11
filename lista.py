@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(623, 415)
+        MainWindow.resize(623, 413)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -35,8 +35,10 @@ class Ui_MainWindow(object):
         self.tableWidget.setMouseTracking(False)
         self.tableWidget.setTabletTracking(False)
         self.tableWidget.setAutoFillBackground(False)
+        self.tableWidget.setStyleSheet("\n"
+"")
         self.tableWidget.setGridStyle(QtCore.Qt.SolidLine)
-        self.tableWidget.setRowCount(1)
+        self.tableWidget.setRowCount(10)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(3)
         item = QtWidgets.QTableWidgetItem()
@@ -70,6 +72,62 @@ class Ui_MainWindow(object):
         self.tableWidget.setItem(0, 1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setItem(0, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(1, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(1, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(1, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(2, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(2, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(2, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(3, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(3, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(3, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(4, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(4, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(4, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(5, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(5, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(5, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(6, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(6, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(6, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(7, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(7, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(7, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(8, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(8, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(8, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(9, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(9, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(9, 2, item)
+
+        
         self.tableWidget.horizontalHeader().setVisible(True)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(183)
@@ -100,6 +158,15 @@ class Ui_MainWindow(object):
         self.label_4.setGeometry(QtCore.QRect(80, 360, 531, 16))
         self.label_4.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_4.setObjectName("label_4")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(520, 350, 75, 23))
+        self.pushButton.setStyleSheet("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);")
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(430, 350, 75, 23))
+        self.pushButton_2.setObjectName("pushButton_2")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 623, 21))
@@ -120,16 +187,49 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Value"))
         __sortingEnabled = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
-        item = self.tableWidget.item(0, 0)
-        item.setText(_translate("MainWindow", "Celular"))
-        item = self.tableWidget.item(0, 1)
-        item.setText(_translate("MainWindow", "eletronic"))
-        item = self.tableWidget.item(0, 2)
-        item.setText(_translate("MainWindow", "1000"))
+
+        lista_note = open('infs_note.txt', 'r')
+
+        Name1 = ''
+        Desc1 = ''
+        Value1 = ''
+        x = 0
+        y = 0
+        for line in lista_note:
+                if y == 0:
+                    Name1 = line
+                elif y == 1:
+                    Desc1 = line
+                elif y == 2:
+                   Value1 = line
+                y += 1
+                if y == 3:
+                        y = 0
+                        x += 1
+
+
+
+                item = self.tableWidget.item(x, y)
+                item.setText(_translate("MainWindow", Name1))
+                item = self.tableWidget.item(0, 1)
+                item.setText(_translate("MainWindow", Desc1))
+                item = self.tableWidget.item(0, 2)
+                item.setText(_translate("MainWindow", Value1))
+                item = self.tableWidget.item(1, 0)
+                item.setText(_translate("MainWindow", Name1))
+                item = self.tableWidget.item(1, 1)
+                item.setText(_translate("MainWindow", Desc1))
+                item = self.tableWidget.item(1, 2)
+                item.setText(_translate("MainWindow", Value1))
+            
+
+        
         self.tableWidget.setSortingEnabled(__sortingEnabled)
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "Valor total:   $"))
         self.label_4.setText(_translate("MainWindow", "0"))
+        self.pushButton.setText(_translate("MainWindow", "Add again"))
+        self.pushButton_2.setText(_translate("MainWindow", "Clean"))
 from imgs import img
 
 

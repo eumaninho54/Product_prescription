@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
 
 class Ui_Dialog(object):
 
@@ -8,6 +9,10 @@ class Ui_Dialog(object):
         self.Name.setText(None)
         self.description.setText(None)
         self.Value.setText(None)
+
+
+    def close_program(self):
+        pass
 
         
  
@@ -40,12 +45,28 @@ class Ui_Dialog(object):
             lermensagem(text)
             self.label_2.setGeometry(QtCore.QRect(185, 0, 350, 21))
         else:
-            text = 'Successful registration'
-            self.label_2.setGeometry(QtCore.QRect(155, 0, 350, 21))
-            if self.checkBox.isChecked():
+            if not self.checkBox.isChecked():
+                
+                text = 'Successful registration'
+                file = open('infs_note.txt', 'a')
+                file.write(self.Name.text()+ '\n')
+                file.write(self.description.text()+ '\n')
+                file.write(self.Value.text()+'\n')
+                self.label_2.setGeometry(QtCore.QRect(155, 0, 350, 21))
+                app = QtWidgets.QApplication
+                app.closeAllWindows()
+                
+                
+            elif self.checkBox.isChecked():
+                text = 'Successful registration'
+                file = open('infs_note.txt', 'a')
+                file.write(self.Name.text()+ '\n')
+                file.write(self.description.text()+ '\n')
+                file.write(self.Value.text()+'\n')
                 text = text + '| Waiting for additional information'
                 self.label_2.setGeometry(QtCore.QRect(90, 0, 350, 21))
         lermensagem(text)
+
 
 
     def setupUi(self, Dialog):
@@ -288,9 +309,11 @@ class Ui_Dialog(object):
         self.description.setPlaceholderText(_translate("Dialog", "Description "))
         self.Value.setPlaceholderText(_translate("Dialog", "Value "))
         self.addbutton.setText(_translate("Dialog", "Add"))
-        self.cleanbutton.setText(_translate("Dialog", "Clean"))
+        self.cleanbutton.setText(_translate("Dialog", "Viwer"))
         self.checkBox.setText(_translate("Dialog", "keep adding"))
         self.label_2.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt;\">Error</span></p></body></html>"))
+        
+
 from imgs import img
 
 
