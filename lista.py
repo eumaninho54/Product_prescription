@@ -192,129 +192,22 @@ class Ui_MainWindow(object):
         lf = list(open('infs_note.txt','r'))
         print(lf)
 
-       
-
-        try:
-                Name1 = lf[0]
-        except:
-                Name1 = None
-        try:
-                Desc1 = lf[1]
-        except:
-                Desc1 = None
-        try:
-                Value1 = lf[2]
-        except:
-                Value1 = None
-        try:
-                Name2 = lf[3]
-        except:
-                Name2 = None
-        try:
-                Desc2 = lf[4]
-        except:
-                Desc2 = None
-        try:
-                Value2 = lf[5]
-        except:
-                Value2 = None
-        
-        Name3 = None
-        Desc3 = None
-        Value3 = None
-        Name4 = None
-        Desc4 = None
-        Value4 = None
-        Name5 = None
-        Desc5 = None
-        Value5 = None
-        Name6 = None
-        Desc6 = None
-        Value6 = None
-        Name7 = None
-        Desc7 = None
-        Value7 = None
-        Name8 = None
-        Desc8 = None
-        Value8 = None
-        Name9 = None
-        Desc9 = None
-        Value9 = None
-        Name10 = None
-        Desc10 = None
-        Value10 = None
-
-
-
-
-        print(Name1)
-      
-        item = self.tableWidget.item(0, 0)
-        item.setText(_translate("MainWindow", Name1))
-        item = self.tableWidget.item(0, 1)
-        item.setText(_translate("MainWindow", Desc1))
-        item = self.tableWidget.item(0, 2)
-        item.setText(_translate("MainWindow", Value1))
-        item = self.tableWidget.item(1, 0)
-        item.setText(_translate("MainWindow", Name2))
-        item = self.tableWidget.item(1, 1)
-        item.setText(_translate("MainWindow", Desc2))
-        item = self.tableWidget.item(1, 2)
-        item.setText(_translate("MainWindow", Value2))
-        item = self.tableWidget.item(2, 0)
-        item.setText(_translate("MainWindow", Name3))
-        item = self.tableWidget.item(2, 1)
-        item.setText(_translate("MainWindow", Desc3))
-        item = self.tableWidget.item(2, 2)
-        item.setText(_translate("MainWindow", Value3))
-        item = self.tableWidget.item(3, 0)
-        item.setText(_translate("MainWindow", Name4))
-        item = self.tableWidget.item(3, 1)
-        item.setText(_translate("MainWindow", Desc4))
-        item = self.tableWidget.item(3, 2)
-        item.setText(_translate("MainWindow", Value4))
-        item = self.tableWidget.item(4, 0)
-        item.setText(_translate("MainWindow", Name5))
-        item = self.tableWidget.item(4, 1)
-        item.setText(_translate("MainWindow", Desc5))
-        item = self.tableWidget.item(4, 2)
-        item.setText(_translate("MainWindow", Value5))
-        item = self.tableWidget.item(5, 0)
-        item.setText(_translate("MainWindow", Name6))
-        item = self.tableWidget.item(5, 1)
-        item.setText(_translate("MainWindow", Desc6))
-        item = self.tableWidget.item(5, 2)
-        item.setText(_translate("MainWindow", Value6))
-        item = self.tableWidget.item(6, 0)
-        item.setText(_translate("MainWindow", Name7))
-        item = self.tableWidget.item(6, 1)
-        item.setText(_translate("MainWindow", Desc7))
-        item = self.tableWidget.item(6, 2)
-        item.setText(_translate("MainWindow", Value7))
-        item = self.tableWidget.item(7, 0)
-        item.setText(_translate("MainWindow", Name8))
-        item = self.tableWidget.item(7, 1)
-        item.setText(_translate("MainWindow", Desc8))
-        item = self.tableWidget.item(7, 2)
-        item.setText(_translate("MainWindow", Value8))
-        item = self.tableWidget.item(8, 0)
-        item.setText(_translate("MainWindow", Name9))
-        item = self.tableWidget.item(8, 1)
-        item.setText(_translate("MainWindow", Desc9))
-        item = self.tableWidget.item(8, 2)
-        item.setText(_translate("MainWindow", Value9))
-        item = self.tableWidget.item(9, 0)
-        item.setText(_translate("MainWindow", Name10))
-        item = self.tableWidget.item(9, 1)
-        item.setText(_translate("MainWindow", Desc10))
-        item = self.tableWidget.item(9, 2)
-        item.setText(_translate("MainWindow", Value10))
-
-
-
-        
-                        
-            
+        x = 0
+        y = 0
+        lf_num = 0
+        inf = ''
+        for c  in range (0, 30):
+                try:
+                        inf = lf[lf_num]
+                except:
+                        inf = None
+                item = self.tableWidget.item(x, y)
+                item.setText(_translate("MainWindow", inf))
+                lf_num += 1
+                y += 1
+                if y == 3:
+                        y = 0
+                        x += 1
 
         
         self.tableWidget.setSortingEnabled(__sortingEnabled)
