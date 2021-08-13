@@ -18,10 +18,16 @@ class Ui_Dialog(object):
         
  
     # Chech Infs
+
+    def viewer(self):
+        app = QtWidgets.QApplication
+        app.closeAllWindows()
+
     def chechField(self):
         text_name = ""
         text_desc = ""
         text_value = ""
+    
 
 
         def lermensagem(msg):
@@ -296,6 +302,8 @@ class Ui_Dialog(object):
         self.addbutton.clicked.connect(self.chechField)
 
         self.cleanbutton.clicked.connect(self.clean_program)
+
+        self.cleanbutton.clicked.connect(self.viewer)
 
 
 

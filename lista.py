@@ -172,9 +172,15 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 623, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
-
+        self.pushButton.clicked.connect(self.addagain_return)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def addagain_return(self):
+            app = QtWidgets.QApplication
+            app.closeAllWindows()
+            return True
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -187,6 +193,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Value"))
         __sortingEnabled = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
+
 
  
         lf = list(open('infs_note.txt','r'))

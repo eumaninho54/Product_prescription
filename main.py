@@ -28,9 +28,12 @@ def listainic():
         MainWindow.show()
         app.exec_()
 
-
-
-
 menuinic()
 listainic()
 
+aff = lista.Ui_MainWindow.addagain_return(self=lista.Ui_MainWindow)
+print(aff)
+
+if aff == True:
+    menuinic()
+    listainic()
