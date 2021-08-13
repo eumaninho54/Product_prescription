@@ -207,11 +207,12 @@ class Ui_MainWindow(object):
 
  
         lf = list(open('infs_note.txt','r'))
-
         x = 0
         y = 0
         lf_num = 0
         inf = ''
+        tot = int(0)
+        vol = 1
         for c  in range (0, 30):
                 try:
                         inf = lf[lf_num]
@@ -219,17 +220,25 @@ class Ui_MainWindow(object):
                         inf = None
                 item = self.tableWidget.item(x, y)
                 item.setText(_translate("MainWindow", inf))
-                lf_num += 1
                 y += 1
                 if y == 3:
                         y = 0
                         x += 1
+                if vol % 3 == 0 :
+                        try:
+                            tot += float(lf[lf_num])
+                        except:
+                            pass
+                vol += 1
+                lf_num += 1
+        tot = f'{tot:.2f}'
+
 
         
         self.tableWidget.setSortingEnabled(__sortingEnabled)
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "Valor total:   $"))
-        self.label_4.setText(_translate("MainWindow", "0"))
+        self.label_4.setText(_translate("MainWindow", f'{str(tot).replace(".", ",")}'))
         self.pushButton.setText(_translate("MainWindow", "Add again"))
         self.pushButton_2.setText(_translate("MainWindow", "Clean"))
 from imgs import img
