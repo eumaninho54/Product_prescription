@@ -9,9 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QMessageBox, QWidget, QApplication
+import menu
 
 class Ui_MainWindow(object):
+
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(623, 413)
@@ -175,11 +178,11 @@ class Ui_MainWindow(object):
         self.pushButton.clicked.connect(self.addagain_return)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
     def addagain_return(self):
             app = QtWidgets.QApplication
             app.closeAllWindows()
-            return True
+            global a
+            a = True
 
 
     def retranslateUi(self, MainWindow):
@@ -197,7 +200,6 @@ class Ui_MainWindow(object):
 
  
         lf = list(open('infs_note.txt','r'))
-        print(lf)
 
         x = 0
         y = 0
@@ -233,4 +235,4 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())
+    app.exec_()

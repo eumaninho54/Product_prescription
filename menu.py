@@ -321,16 +321,27 @@ class Ui_Dialog(object):
         self.cleanbutton.setText(_translate("Dialog", "Viwer"))
         self.checkBox.setText(_translate("Dialog", "keep adding"))
         self.label_2.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt;\">Error</span></p></body></html>"))
-        
+
+
+def menuinic():
+    if __name__ == "__main__":
+        import sys
+        app = QtWidgets.QApplication(sys.argv)
+        Dialog = QtWidgets.QDialog()
+        ui = Ui_Dialog()
+        ui.setupUi(Dialog)
+        Dialog.show()
+        sys.exit(app.exec_())
+
 
 from imgs import img
 
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
     Dialog.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())'''

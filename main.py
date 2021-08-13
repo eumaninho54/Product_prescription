@@ -15,6 +15,7 @@ def menuinic():
         ui.setupUi(Dialog)
         Dialog.show()
         app.exec_()
+        lista.a = False
 
 
 def listainic():
@@ -27,13 +28,12 @@ def listainic():
         ui.setupUi(MainWindow)
         MainWindow.show()
         app.exec_()
+        
 
 menuinic()
 listainic()
 
-aff = lista.Ui_MainWindow.addagain_return(self=lista.Ui_MainWindow)
-print(aff)
-
-if aff == True:
+while lista.a == True:
     menuinic()
     listainic()
+
