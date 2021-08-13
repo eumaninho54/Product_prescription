@@ -175,7 +175,11 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 623, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+
         self.pushButton.clicked.connect(self.addagain_return)
+        self.pushButton_2.clicked.connect(self.clean)
+        self.pushButton_2.clicked.connect(self.addagain_return)
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def addagain_return(self):
@@ -183,6 +187,9 @@ class Ui_MainWindow(object):
             app.closeAllWindows()
             global a
             a = True
+
+    def clean(self):
+            list(open('infs_note.txt', 'w+'))
 
 
     def retranslateUi(self, MainWindow):
