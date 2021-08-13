@@ -221,7 +221,6 @@ class Ui_MainWindow(object):
                         inf = None
                 item = self.tableWidget.item(x, y)
                 item.setText(_translate("MainWindow", inf))
-                lf_num += 1
                 y += 1
                 if y == 3:
                         y = 0
